@@ -7,7 +7,15 @@
 		{
 			"Name": "ModuleConfigProject",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"ALS",
+				"Engine",
+				"ALSExtras",
+				"AIModule",
+				"UMG",
+				"NavigationSystem"
+			]
 		},
 		{
 			"Name": "VorpisItemsModule",
@@ -22,7 +30,11 @@
 		{
 			"Name": "VorpisBaseCharacterModule",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"ALS",
+				"ALSCamera"
+			]
 		}
 	],
 	"Plugins": [
@@ -32,6 +44,10 @@
 			"TargetAllowList": [
 				"Editor"
 			]
+		},
+		{
+			"Name": "EnhancedInput",
+			"Enabled": true
 		}
 	]
 }

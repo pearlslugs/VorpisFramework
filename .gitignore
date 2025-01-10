@@ -361,3 +361,20 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+Plugins/
+```
+Content/
+```
+Binaries/
+```
+UnrealEditor/
+```
+Win64/
+```
+Build/
+```
+Intermediate/
+```
+Saved/
+```
