@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\ModuleConfigProject.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\ModuleConfigProject.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\ModuleConfigProjectEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\ModuleConfigProject">
+      <UniqueIdentifier>{F8C7E558-B7BC-3936-83B6-C324F3635544}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\ModuleConfigProject\ModuleConfigProject.Build.cs">
+      <Filter>Source\ModuleConfigProject</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\ModuleConfigProject\ModuleConfigProject.cpp">
+      <Filter>Source\ModuleConfigProject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ModuleConfigProject\ModuleConfigProject.h">
+      <Filter>Source\ModuleConfigProject</Filter>
+    </ClCompile>
+    <Filter Include="Source\VorpisBaseCharacterModule">
+      <UniqueIdentifier>{C3D2A49C-25EB-30B7-8366-532FBD5C7920}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\VorpisBaseCharacterModule\VorpisBaseCharacterModule.Build.cs">
+      <Filter>Source\VorpisBaseCharacterModule</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\VorpisBaseCharacterModule\VorpisBaseCharacterModule.cpp">
+      <Filter>Source\VorpisBaseCharacterModule</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\VorpisBaseCharacterModule\VorpisBaseCharacterModule.h">
+      <Filter>Source\VorpisBaseCharacterModule</Filter>
+    </ClCompile>
+    <Filter Include="Source\VorpisInventoryComponentModule">
+      <UniqueIdentifier>{64C162E3-810B-3E90-A0A2-886C7DD10D70}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\VorpisInventoryComponentModule\VorpisInventoryComponentModule.Build.cs">
+      <Filter>Source\VorpisInventoryComponentModule</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\VorpisInventoryComponentModule\VorpisInventoryComponentModule.cpp">
+      <Filter>Source\VorpisInventoryComponentModule</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\VorpisInventoryComponentModule\VorpisInventoryComponentModule.h">
+      <Filter>Source\VorpisInventoryComponentModule</Filter>
+    </ClCompile>
+    <Filter Include="Source\VorpisItemsModule">
+      <UniqueIdentifier>{66C81C7D-A3A8-354E-8238-2721234EE681}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\VorpisItemsModule\VorpisItemsModule.Build.cs">
+      <Filter>Source\VorpisItemsModule</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\VorpisItemsModule\VorpisItemsModule.cpp">
+      <Filter>Source\VorpisItemsModule</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\VorpisItemsModule\VorpisItemsModule.h">
+      <Filter>Source\VorpisItemsModule</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

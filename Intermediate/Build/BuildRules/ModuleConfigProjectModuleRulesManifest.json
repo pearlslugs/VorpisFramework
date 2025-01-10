@@ -1,0 +1,11 @@
+{
+	"SourceFiles": [
+		"C:\\Users\\Pearl\\Documents\\Unreal Projects\\ModuleConfigProject\\Source\\ModuleConfigProject\\ModuleConfigProject.Build.cs",
+		"C:\\Users\\Pearl\\Documents\\Unreal Projects\\ModuleConfigProject\\Source\\VorpisBaseCharacterModule\\VorpisBaseCharacterModule.Build.cs",
+		"C:\\Users\\Pearl\\Documents\\Unreal Projects\\ModuleConfigProject\\Source\\VorpisInventoryComponentModule\\VorpisInventoryComponentModule.Build.cs",
+		"C:\\Users\\Pearl\\Documents\\Unreal Projects\\ModuleConfigProject\\Source\\VorpisItemsModule\\VorpisItemsModule.Build.cs",
+		"C:\\Users\\Pearl\\Documents\\Unreal Projects\\ModuleConfigProject\\Source\\ModuleConfigProject.Target.cs",
+		"C:\\Users\\Pearl\\Documents\\Unreal Projects\\ModuleConfigProject\\Source\\ModuleConfigProjectEditor.Target.cs"
+	],
+	"EngineVersion": "5.5.1"
+}
