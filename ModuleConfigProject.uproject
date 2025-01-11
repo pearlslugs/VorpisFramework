@@ -14,13 +14,18 @@
 				"ALSExtras",
 				"AIModule",
 				"UMG",
-				"NavigationSystem"
+				"NavigationSystem",
+				"VorpisInventoryComponentModule",
+				"VorpisBaseCharacterModule"
 			]
 		},
 		{
 			"Name": "VorpisItemsModule",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
 		},
 		{
 			"Name": "VorpisInventoryComponentModule",
@@ -35,6 +40,11 @@
 				"ALS",
 				"ALSCamera"
 			]
+		},
+		{
+			"Name": "VorpisInteractableModule",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
 		}
 	],
 	"Plugins": [
