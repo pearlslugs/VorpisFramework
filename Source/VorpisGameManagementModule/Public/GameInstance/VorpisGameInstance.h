@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
+#include "SaveGameObject/VorpisSaveGameObject.h"
 #include "VorpisGameInstance.generated.h"
 
 /**
@@ -14,7 +15,11 @@ class VORPISGAMEMANAGEMENTMODULE_API UVorpisGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
 public: 
+
 	UVorpisGameInstance();
+
+	// slot name 
+	// this works with the game instance to get all save games in the save folder
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "SaveGame", meta = (AllowPrivateAccess = "true"))
 	FString SelectedGameSlotName;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
@@ -27,5 +32,9 @@ public:
 	void SetSelectedGameSlotName(FString NewSelectedGameSlotName) { SelectedGameSlotName = NewSelectedGameSlotName; };
 	UFUNCTION(BlueprintCallable, Category = "SaveGame")
 	FString GetSelectedGameSlotName() { return SelectedGameSlotName; };
+
+	// save object
+	UPROPERTY()
+	UVorpisSaveGameObject* SaveGameObject;
 	
 };

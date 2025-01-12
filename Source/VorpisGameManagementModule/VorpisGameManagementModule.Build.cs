@@ -38,7 +38,9 @@ public class VorpisGameManagementModule : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
-            "VorpisSaveGameModule"
+            "VorpisItemsModule",
+            "VorpisInventoryComponentModule",
+            "VorpisBaseCharacterModule",
 				// ... add private dependencies that you statically link with here ...
 			}
 			);

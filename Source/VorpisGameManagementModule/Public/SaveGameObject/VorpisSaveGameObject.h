@@ -2,24 +2,20 @@
 
 #pragma once
 
-// comment out imports and sections that you are not using
-
 #include "CoreMinimal.h"
 #include "GameFramework/SaveGame.h"
-#include "ItemData/ItemStructs.h"
 #include "InventoryData/InventoryStucts.h"
-#include "VorpisSaveGame.generated.h"
+#include "VorpisSaveGameObject.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class VORPISSAVEGAMEMODULE_API UVorpisSaveGame : public USaveGame
+class VORPISGAMEMANAGEMENTMODULE_API UVorpisSaveGameObject : public USaveGame
 {
 	GENERATED_BODY()
+
 public:
-
-
 	//_______________________________________________________________________________________________
 	// inventory data
 	UPROPERTY(VisibleAnywhere, Category = "SaveData")
@@ -45,6 +41,5 @@ public:
 
 	//_______________________________________________________________________________________________
 	// next data  \ 
-
 	
 };

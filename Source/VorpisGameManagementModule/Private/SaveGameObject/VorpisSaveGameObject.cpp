@@ -1,14 +1,14 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "SaveObject/VorpisSaveGame.h"
+#include "SaveGameObject/VorpisSaveGameObject.h"
 
-void UVorpisSaveGame::SaveInventoryData(FInventorySaveStruct InventoryToSave)
+void UVorpisSaveGameObject::SaveInventoryData(FInventorySaveStruct InventoryToSave)
 {
 	AllInventories.Add(InventoryToSave.InventoryGuid, InventoryToSave);
 }
 
-FInventorySaveStruct UVorpisSaveGame::LoadInventoryData(FGuid InventoryGuid)
+FInventorySaveStruct UVorpisSaveGameObject::LoadInventoryData(FGuid InventoryGuid)
 {
 	if (AllInventories.Contains(InventoryGuid))
 	{
@@ -21,12 +21,12 @@ FInventorySaveStruct UVorpisSaveGame::LoadInventoryData(FGuid InventoryGuid)
 	}
 }
 
-void UVorpisSaveGame::SaveNewPickUp(FPickUpData ItemToSave)
+void UVorpisSaveGameObject::SaveNewPickUp(FPickUpData ItemToSave)
 {
 	AllPickUps.Add(ItemToSave.ItemData.ItemGuid, ItemToSave);
 }
 
-TMap<FGuid, FPickUpData> UVorpisSaveGame::LoadAllPickups()
+TMap<FGuid, FPickUpData> UVorpisSaveGameObject::LoadAllPickups()
 {
 	return AllPickUps;
 }
