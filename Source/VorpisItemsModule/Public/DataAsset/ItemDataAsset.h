@@ -22,11 +22,13 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basics")
 	FName ItemName;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basics")
-	FGuid ItemGuid;
+	FGuid AssetGuid;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basics")
 	UTexture2D* IconTexture;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basics")
 	bool IsStackable;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basics")
+	int MaxStackSize;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Basics")
 	FString ItemDescription;
 
@@ -83,4 +85,10 @@ public:
 	EEquipmentLayerType EquipmentLayerType;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Wearable")
 	TMap<EPhysicalDamageType, int> ProtectionMap;
+
+	// inventory data
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Inventory")
+	int ItemHeight;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Inventory")
+	int ItemWidth;
 };

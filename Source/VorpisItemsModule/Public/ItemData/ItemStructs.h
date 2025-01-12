@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FItemData
 {
 	GENERATED_BODY()
-
+public:
 	// basic data
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Basics")
 	FName ItemName; // quality + material + name, so like "exeptional bronze sword"

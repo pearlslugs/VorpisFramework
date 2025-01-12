@@ -8,7 +8,7 @@ public class VorpisInventoryComponentModule : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "VorpisItemsModule" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 

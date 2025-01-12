@@ -14,5 +14,6 @@ public class ModuleConfigProjectTarget : TargetRules
         ExtraModuleNames.Add("VorpisBaseCharacterModule");
         ExtraModuleNames.Add("VorpisInventoryComponentModule");
         ExtraModuleNames.Add("VorpisItemsModule");
+		ExtraModuleNames.Add("VorpisInteractableModule");
     }
 }
