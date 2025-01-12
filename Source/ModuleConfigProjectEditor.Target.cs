@@ -15,5 +15,7 @@ public class ModuleConfigProjectEditorTarget : TargetRules
         ExtraModuleNames.Add("VorpisInventoryComponentModule");
         ExtraModuleNames.Add("VorpisItemsModule");
         ExtraModuleNames.Add("VorpisInteractableModule");
+        ExtraModuleNames.Add("VorpisSaveGameModule");
+        ExtraModuleNames.Add("VorpisGameManagementModule");
     }
 }

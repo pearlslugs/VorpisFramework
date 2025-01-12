@@ -44,3 +44,14 @@ public:
 
 
 };
+
+USTRUCT(BlueprintType)
+struct FPickUpData
+{
+	GENERATED_BODY()
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pickup")
+	FItemData ItemData;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pickup")
+	FVector Location;
+};
