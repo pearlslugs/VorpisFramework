@@ -73,3 +73,14 @@ public:
 		CurrentRemainingSpace = MaximumSpace;
 	}
 };
+
+USTRUCT(BlueprintType)
+struct FInventorySaveStruct
+{
+	GENERATED_BODY()
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Inventory")
+	TMap<FGuid, FItemInventoryStruct> InventoryMap;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Inventory")
+	FGuid InventoryGuid;
+};

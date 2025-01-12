@@ -14,24 +14,27 @@
 //* ie sleep/opening menus/ entering new scenes																		*
 //**************************************************************************************************
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInventoryUpdated, TMap<FGuid, FItemInventoryStruct>, InventoryToSave);
+// what is wrong with this?
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnInventoryUpdated, FInventorySaveStruct, InventoryToSave);
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class VORPISINVENTORYCOMPONENTMODULE_API UBaseInventoryComponent : public UActorComponent
 {
 	GENERATED_BODY()
-
-	// delegate
-	UPROPERTY(BlueprintAssignable)
-	FInventoryUpdated OnInventoryUpdated;
-
 public:	
 	// Sets default values for this component's properties
 	UBaseInventoryComponent();
 
+	// delegate
+	UPROPERTY(BlueprintAssignable)
+	FOnInventoryUpdated OnInventoryUpdated;
+
 	// base data
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Inventory")
 	TMap<FGuid, FItemInventoryStruct> InventoryMap;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Inventory")
+	FGuid InventoryGuid;
 
 	// inventory functions
 	UFUNCTION(BlueprintPure)
@@ -57,7 +60,7 @@ public:
 
 	// save and load
 	UFUNCTION(BlueprintCallable)
-	void InitializeInventory(TMap<FGuid, FItemInventoryStruct> InventoryData, FInventorySpaceStruct CurrentSpace);
+	void InitializeInventory(TMap<FGuid, FItemInventoryStruct> InventoryData, FInventorySpaceStruct CurrentSpace, FGuid OwnerGuid);
 
 protected:
 	// Called when the game starts
