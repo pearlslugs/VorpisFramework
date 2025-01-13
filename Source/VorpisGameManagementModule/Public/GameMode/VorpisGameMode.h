@@ -4,20 +4,72 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "InventoryData/InventoryStucts.h"
+#include "SaveGameObject/VorpisSaveGameObject.h"
+#include "GameMode/GameModeInterface/GameModeInterface.h"
 #include "VorpisGameMode.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class VORPISGAMEMANAGEMENTMODULE_API AVorpisGameMode : public AGameModeBase
+class VORPISGAMEMANAGEMENTMODULE_API AVorpisGameMode : public AGameModeBase, public IGameModeInterface
 {
 	GENERATED_BODY()
 public:
+
+protected:
+
+	virtual void BeginPlay() override;
+
+public:
+	
+	// interfaces
+	virtual void InterfaceSaveInventoryData(FInventorySaveStruct InventoryToSave) { SaveInventoryData(InventoryToSave); };
+	virtual FInventorySaveStruct InterfaceLoadInventoryData(FGuid InventoryGuid) { return LoadInventoryData(InventoryGuid); };
+	virtual void InterfaceSaveNewPickUp(FPickUpData ItemToSave) { SaveNewPickUp(ItemToSave); };
+	virtual TMap<FGuid, FPickUpData> InterfaceLoadAllPickups() { return LoadAllPickups(); };
+
+
+
+
+
+	// save game
+
+	UFUNCTION()
+	void LoadGame();
+	UFUNCTION(BlueprintCallable)
+	void SaveGameToSlot();
+	UFUNCTION()
+	void CreateSaveObject();
 	FString SlotName = "CHARACTER_Doug";
 	UFUNCTION(BlueprintCallable, Category = "SaveGame")
 	void SetSelectedGameSlotName(FString NewSelectedGameSlotName) { SlotName = NewSelectedGameSlotName; };
-	UFUNCTION(BlueprintCallable, Category = "SaveGame")
+	UFUNCTION(BlueprintPure, Category = "SaveGame")
 	FString GetSelectedGameSlotName() { return SlotName; };
+	UFUNCTION(BlueprintCallable, Category = "SaveGame")
+	void SetSaveGameObject(UVorpisSaveGameObject* NewSaveGameObject) { VorpisSaveGameObject = NewSaveGameObject; };
+	UFUNCTION(BlueprintCallable)
+	void MakeNewSaveSlot(FString NewSlotName);
+
+
+	UPROPERTY()
+	UVorpisSaveGameObject* VorpisSaveGameObject;
+
+	//_______________________________________________________________________________________________
+	// inventory data
+	UFUNCTION()
+	void SaveInventoryData(FInventorySaveStruct InventoryToSave);
+	UFUNCTION()
+	FInventorySaveStruct LoadInventoryData(FGuid InventoryGuid);
+
+	//_______________________________________________________________________________________________
+	// item data
+	UFUNCTION()
+	void SaveNewPickUp(FPickUpData ItemToSave);
+	UFUNCTION()
+	TMap<FGuid, FPickUpData> LoadAllPickups();
+
+	//_______________________________________________________________________________________________
 	
 };
