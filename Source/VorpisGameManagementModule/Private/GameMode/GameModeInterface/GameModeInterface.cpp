@@ -18,8 +18,8 @@ void IGameModeInterface::InterfaceSaveNewPickUp(FPickUpData ItemToSave)
 {
 	//
 }
-TMap<FGuid, FPickUpData> IGameModeInterface::InterfaceLoadAllPickups();
+TMap<FGuid, FPickUpData> IGameModeInterface::InterfaceLoadAllPickups()
 {
-	TMap<FGuid, FPickUpData> PickUpData;
-	return PickUpData;
+	TMap<FGuid, FPickUpData> CurrentPickUpData;
+	return CurrentPickUpData;
 }

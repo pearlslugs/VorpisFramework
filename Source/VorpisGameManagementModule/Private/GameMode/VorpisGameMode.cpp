@@ -14,15 +14,18 @@ void AVorpisGameMode::MakeNewSaveSlot(FString NewSlotName)
 void AVorpisGameMode::BeginPlay()
 {
 	Super::BeginPlay();
-	if (!SlotName.IsEmpty())
-	{
+	if (!SlotName.IsEmpty()) {
 		AVorpisGameMode::LoadGame();
-	}
-	else
-	{
+	} else {
 		// if this fails, there is an error in your configuration
 		UE_LOG(LogTemp, Error, TEXT("SlotName is empty!"));
 	}
+}
+
+void AVorpisGameMode::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+	Super::EndPlay(EndPlayReason);
+	AVorpisGameMode::SaveGameToSlot();
 }
 
 void AVorpisGameMode::CreateSaveObject()
@@ -32,11 +35,9 @@ void AVorpisGameMode::CreateSaveObject()
 
 void AVorpisGameMode::SaveGameToSlot()
 {
-	if (VorpisSaveGameObject)
-	{
+	if (VorpisSaveGameObject) {
 		UGameplayStatics::AsyncSaveGameToSlot(VorpisSaveGameObject, SlotName, 0);
-	}
-	else {
+	} else {
 		AVorpisGameMode::LoadGame();
 	}
 }
@@ -44,15 +45,14 @@ void AVorpisGameMode::SaveGameToSlot()
 void AVorpisGameMode::LoadGame()
 {
 	VorpisSaveGameObject = Cast<UVorpisSaveGameObject>(UGameplayStatics::LoadGameFromSlot(SlotName, 0));
-	if (!VorpisSaveGameObject)
-	{
+	if (!VorpisSaveGameObject) {
 		AVorpisGameMode::CreateSaveObject();
 	}
 }
 
 // in this funciton, we see how we use the save and load systme.
 // this is to catch any nullptr to the save object, if it is null, 
-// we load game so initialize it, then run the function again
+// we load game so initialize it, then run the function again.
 void AVorpisGameMode::SaveInventoryData(FInventorySaveStruct InventoryData)
 {
 	if (VorpisSaveGameObject) {
@@ -71,5 +71,23 @@ FInventorySaveStruct AVorpisGameMode::LoadInventoryData(FGuid InventoryGuid)
 		AVorpisGameMode::LoadGame();
 		return AVorpisGameMode::LoadInventoryData(InventoryGuid);
 	}
-	return FInventorySaveStruct();
+}
+
+void AVorpisGameMode::SaveNewPickUp(FPickUpData ItemToSave)
+{
+	if (VorpisSaveGameObject) {
+		VorpisSaveGameObject->SaveNewPickUp(ItemToSave);
+	} else {
+		AVorpisGameMode::LoadGame();
+		AVorpisGameMode::SaveNewPickUp(ItemToSave);
+	}
+}
+TMap<FGuid, FPickUpData> AVorpisGameMode::LoadAllPickups()
+{
+	if (VorpisSaveGameObject) {
+		return VorpisSaveGameObject->LoadAllPickups();
+	} else {
+		AVorpisGameMode::LoadGame();
+		return AVorpisGameMode::LoadAllPickups();
+	}
 }
